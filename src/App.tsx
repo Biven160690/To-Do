@@ -6,3 +6,4 @@ export function App() {
       <div></div>
     </Layout>
   );
+}
