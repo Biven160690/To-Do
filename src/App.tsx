@@ -1,5 +1,9 @@
-function App() {
-  return <div></div>;
-}
+import { Layout } from './components/layout/Layout';
 
-export default App;
+export function App() {
+  return (
+    <Layout>
+      <div></div>
+    </Layout>
+  );
+}
