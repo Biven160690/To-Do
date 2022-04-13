@@ -1,4 +1,4 @@
-import { TaskActive } from '../tasks/TaskActive';
+import { TaskActive } from './TaskActive';
 
 export function TaskActiveContainer() {
   return <TaskActive />;
