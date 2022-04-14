@@ -1,0 +1,81 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  height: 64px;
+  right: 0px;
+  top: 0px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+   &__logo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     width: 52px;
+   }
+
+   &__icon {
+     width: 18.13px;
+     height: 23.52px;
+     color: #550DC9;
+   }
+
+   &__iconText {
+     font-family: 'Roboto';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 6px;
+     line-height: 7px;
+   }
+
+   &__title {
+     height: 100%;
+     margin-left: 24px;
+   }
+
+   &__text {
+     font-family: 'Open Sans';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 16px;
+     line-height: 22px;
+   }
+}
+
+.navbar-userProfile {
+  display: flex;
+  align-items: center;
+
+   &__userName {
+     font-family: 'Open Sans';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 19px;
+
+     &:first-child {
+       padding-right: 8px;
+     }
+   }
+
+   &__userActions {
+     display: flex;
+     align-items: center;
+     margin-right: 30px;
+   }
+
+   &__userIcon {
+     padding-right: 8px;
+     width: 32px;
+     height: 32px;
+   }
+}
