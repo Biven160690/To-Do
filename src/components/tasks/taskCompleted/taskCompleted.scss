@@ -1,53 +1,61 @@
 .task-completed {
-    position: relative;
-    width: 1228px;
-    height: 48px;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
+  position: relative;
+  width: 100%;
+  height: 48px;
+  background: #ffffff;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
 
-     &__actions {
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       margin: 15px;
-       height: 100%;
-     }
+    &__actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 15px;
+      height: 100%;
+    }
 
-     &__checkbox {
-       width: 16px;
-       height: 16px;
-       accent-color:#550DC9;
-       background: #FFFFFF;
-       border: 1px solid #ECECEC;
-       border-radius: 4px;
-     }
+    &__checkbox {
+      width: 16px;
+      height: 16px;
+      accent-color:#550DC9;
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      border-radius: 4px;
+    }
 
-     &__buttons {
-    
-       & > button  {
-         cursor: pointer;
-         font: inherit;
-         padding: 0px;
-         border: none;
-         background-color: inherit;
-       }
-     }
-     &__iconDelete {
-       width: 20px;
-       height: 20px;
-       color: #FF6363;
-       margin-right: 15px;
+    &__buttons {
   
-        &:active {
-          color: #ce9797;
-         }
+      & > button  {
+        cursor: pointer;
+        font: inherit;
+        padding: 0px;
+        border: none;
+        background-color: inherit;
       }
-  
-      &__content {
-        position: absolute;
-        left: 43px;
-        bottom: 15px;
-        text-decoration: line-through;
-     }
+    }
+
+    &__iconDelete {
+      width: 20px;
+      height: 20px;
+      color: #FF6363;
+
+      &:active {
+        color: #ce9797;
+      }
+    }
+
+    &__content {
+      position: absolute;
+      left: 43px;
+      bottom: 15px;
+      text-decoration: line-through;
+    }
+
+    &__total {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+    }
 }
