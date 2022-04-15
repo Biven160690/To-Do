@@ -1,0 +1,19 @@
+.addForm {
+  display: flex;
+
+    &__input {
+      width: 1170px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      box-sizing: border-box;
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+
+    &__button {
+      color: #FFFFFF;
+      background: #550DC9;
+      border-radius: 4px;  
+    }
+}
