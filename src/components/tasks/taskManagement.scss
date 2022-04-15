@@ -1,0 +1,51 @@
+  .task-management {
+    display: flex;
+    margin: 88px 20px 0px 72px;
+
+    &__task-active {
+      width: 55%;
+      margin-right: 80px;
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 24px;
+      background: #FEF6FF;  
+      border-radius: 4px; 
+      margin-top: 10px;
+    }
+
+    &__total {
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #550DC9;
+    }
+
+    &__task-completed {
+      margin-top: -20px;
+      width: 40%;
+    }
+  }
+
+  @media (max-width: 832px) {
+    .task-management {
+      display: flex; 
+      flex-direction: column;
+
+      &__task-active {
+        width: 100%;
+      }
+
+      &__task-completed {
+        padding-top: 20px;    
+        width: 100%;
+      }
+    }
+  }
+ 
