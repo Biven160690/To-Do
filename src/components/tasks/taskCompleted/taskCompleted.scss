@@ -1,0 +1,53 @@
+.task-completed {
+    position: relative;
+    width: 1228px;
+    height: 48px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+
+     &__actions {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       margin: 15px;
+       height: 100%;
+     }
+
+     &__checkbox {
+       width: 16px;
+       height: 16px;
+       accent-color:#550DC9;
+       background: #FFFFFF;
+       border: 1px solid #ECECEC;
+       border-radius: 4px;
+     }
+
+     &__buttons {
+    
+       & > button  {
+         cursor: pointer;
+         font: inherit;
+         padding: 0px;
+         border: none;
+         background-color: inherit;
+       }
+     }
+     &__iconDelete {
+       width: 20px;
+       height: 20px;
+       color: #FF6363;
+       margin-right: 15px;
+  
+        &:active {
+          color: #ce9797;
+         }
+      }
+  
+      &__content {
+        position: absolute;
+        left: 43px;
+        bottom: 15px;
+        text-decoration: line-through;
+     }
+}

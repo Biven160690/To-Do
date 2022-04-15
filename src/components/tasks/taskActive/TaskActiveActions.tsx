@@ -6,7 +6,11 @@ import './taskActive.scss';
 export function TaskActiveActions() {
   return (
     <div className='task-active__actions'>
-      <input type='checkbox' className='task-active__checkbox' />
+      <input
+        type='checkbox'
+        className='task-active__checkbox'
+        checked={false}
+      />
       <div className='task-active__buttons'>
         <button type='button'>
           <FiEdit className='task-active__iconEdit' />
