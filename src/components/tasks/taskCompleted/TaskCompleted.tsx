@@ -2,16 +2,27 @@ import { TaskBox } from '../TaskBox';
 import { TaskCompletedActions } from './TaskCompletedActions';
 import { TaskContent } from '../TaskContent';
 
-import './taskCompleted.scss';
+import { Tasks } from '../types';
 
-export function TaskCompleted() {
+interface TaskCompletedProps {
+  task: Tasks;
+  styles: {
+    box: string;
+    content: string;
+  };
+}
+
+export function TaskCompleted({ task, styles }: TaskCompletedProps) {
+  const { box, content } = styles;
+
   return (
-    <TaskBox styles='task-completed'>
+    <TaskBox styles={box}>
       <TaskContent
-        text='Add Icon to Dashboard'
-        styles='task-completed__content'
+        title={task.title}
+        styles={content}
+        isCompleted={task.completed}
       />
-      <TaskCompletedActions />
+      <TaskCompletedActions isCompleted={task.completed} />
     </TaskBox>
   );
 }
