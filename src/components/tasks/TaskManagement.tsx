@@ -5,29 +5,46 @@ import { TaskActiveContainer } from './taskActive/TaskActiveContainer';
 import { TaskCompletedContainer } from './taskCompleted/TaskCompletedContainer';
 
 import { Tasks } from './types';
-import { getActiveTasks, getCompletedTasks } from '../../helpers/getTasks';
 import { data } from '../../data';
 
 import './taskManagement.scss';
 
 export function TaskManagement() {
-  const [tasks] = useState<Tasks[]>(data);
+  const [tasks, setTasks] = useState<Tasks[]>(data);
 
-  const activeTasks: Tasks[] = getActiveTasks(tasks);
+  const [selectedTask, setSelectedTask] = useState<string>('');
 
-  const completedTasks: Tasks[] = getCompletedTasks(tasks);
+  const [editID, setEditID] = useState<null | number>(null);
+
+  const taskManagement = {
+    tasks,
+    setTasks,
+  };
+
+  const editTask = {
+    editID,
+    setEditID,
+    selectedTask,
+    setSelectedTask,
+  };
 
   return (
     <div className='task-management'>
       <div className='task-management__task-active'>
-        <TaskAddFormContainer />
+        <TaskAddFormContainer
+          taskManagement={taskManagement}
+          editTask={editTask}
+        />
         <div className='task-management__box'>
           <p className='task-management__total'> Total: {tasks.length} </p>
         </div>
-        <TaskActiveContainer activeTasks={activeTasks} />
+        <TaskActiveContainer
+          taskManagement={taskManagement}
+          editTask={editTask}
+        />
       </div>
       <div className='task-management__task-completed'>
-        <TaskCompletedContainer completedTasks={completedTasks} />
+        <TaskCompletedContainer taskManagement={taskManagement} />
       </div>
     </div>
   );

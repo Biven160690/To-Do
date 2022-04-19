@@ -3,6 +3,7 @@ import { TaskCompletedActions } from './TaskCompletedActions';
 import { TaskContent } from '../TaskContent';
 
 import { Tasks } from '../types';
+import { useState } from 'react';
 
 interface TaskCompletedProps {
   task: Tasks;
@@ -10,9 +11,21 @@ interface TaskCompletedProps {
     box: string;
     content: string;
   };
+  deleteCompletedTask: (id: number) => () => void;
+  returnTask: (
+    callback: React.Dispatch<React.SetStateAction<boolean>>,
+    id: number
+  ) => () => void;
 }
 
-export function TaskCompleted({ task, styles }: TaskCompletedProps) {
+export function TaskCompleted({
+  task,
+  styles,
+  deleteCompletedTask,
+  returnTask,
+}: TaskCompletedProps) {
+  const [isCompleted, setIsCompleted] = useState<boolean>(true);
+
   const { box, content } = styles;
 
   return (
@@ -22,7 +35,11 @@ export function TaskCompleted({ task, styles }: TaskCompletedProps) {
         styles={content}
         isCompleted={task.completed}
       />
-      <TaskCompletedActions isCompleted={task.completed} />
+      <TaskCompletedActions
+        isCompleted={isCompleted}
+        deleteCompletedTask={deleteCompletedTask(task.id)}
+        returnTask={returnTask(setIsCompleted, task.id)}
+      />
     </TaskBox>
   );
 }
