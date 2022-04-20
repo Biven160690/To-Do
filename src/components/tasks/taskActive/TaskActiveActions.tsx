@@ -1,35 +1,41 @@
-import { FiEdit } from 'react-icons/fi';
-import { RiDeleteBin6Line } from 'react-icons/ri';
-
+import { TaskActiveInput } from './TaskActiveInput';
+import { TaskActiveButtons } from './TaskActiveButtons';
+import { TaskContent } from '../TaskContent';
 interface TaskActiveProps {
+  title: string;
+  styleContent: string;
   completeTask: () => void;
   deleteTask: () => void;
-  isEdit: boolean;
-  getCurrencyTask: () => void;
+  getSelectedTask: (
+    callback: React.Dispatch<React.SetStateAction<boolean>>
+  ) => void;
+  checkCurrentId: () => boolean;
 }
 
 export function TaskActiveActions({
+  styleContent,
+  checkCurrentId,
   completeTask,
   deleteTask,
-  isEdit,
-  getCurrencyTask,
+  getSelectedTask,
+  title,
 }: TaskActiveProps) {
   return (
     <div className='task-active__actions'>
-      <input
-        type='checkbox'
-        className='task-active__checkbox'
-        onChange={completeTask}
-      />
-      <div className='task-active__buttons'>
-        {isEdit && (
-          <button type='button' onClick={getCurrencyTask}>
-            <FiEdit className='task-active__iconEdit' />
-          </button>
-        )}
-        <button type='button' onClick={deleteTask}>
-          <RiDeleteBin6Line className='task-active__iconDelete' />
-        </button>
+      <div className='task-active__actions__inputBox'>
+        <div>
+          <TaskActiveInput completeTask={completeTask} />
+        </div>
+        <div className='task-active__actions__contentBox'>
+          <TaskContent title={title} styles={styleContent} />
+        </div>
+      </div>
+      <div>
+        <TaskActiveButtons
+          checkCurrentId={checkCurrentId}
+          deleteTask={deleteTask}
+          getSelectedTask={getSelectedTask}
+        />
       </div>
     </div>
   );

@@ -6,10 +6,12 @@ interface TaskContentProps {
 
 export function TaskContent({ title, styles, isCompleted }: TaskContentProps) {
   return (
-    <div
-      className={styles}
-      style={{ textDecoration: isCompleted ? 'line-through' : '' }}>
-      {title}
+    <div>
+      <div
+        className={styles}
+        style={{ textDecoration: isCompleted ? 'line-through' : '' }}>
+        {title}
+      </div>
     </div>
   );
 }

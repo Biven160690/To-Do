@@ -1,33 +1,26 @@
 import React from 'react';
-import './addForm.scss';
+
+import { AddFormButtons } from './AddFormButton';
+import { AddFormInput } from './AddFormInput';
 
 interface TaskAddProps {
-  isAdd: boolean;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  isAdding: boolean;
   title: string;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   getInputData: (event: React.FormEvent<HTMLInputElement>) => void;
 }
 
 export function TaskAddForm({
-  isAdd,
-  handleSubmit,
+  isAdding,
   title,
+  handleSubmit,
   getInputData,
 }: TaskAddProps) {
   return (
     <form onSubmit={handleSubmit}>
       <div className='addForm'>
-        <input
-          required
-          value={title}
-          type='text'
-          placeholder='+ Add a task, press Enter to save'
-          className='addForm__input'
-          onChange={getInputData}
-        />
-        <button type='submit' className='addForm__button'>
-          {isAdd ? 'Add' : 'Save'}
-        </button>
+        <AddFormInput title={title} getInputData={getInputData} />
+        <AddFormButtons isAdding={isAdding} />
       </div>
     </form>
   );

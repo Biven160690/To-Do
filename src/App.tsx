@@ -1,5 +1,5 @@
 import { Layout } from './components/layout/Layout';
-import { TaskManagement } from './components/tasks/TaskManagement';
+import { TaskManagement } from './containers/TaskManagement';
 
 export function App() {
   return (

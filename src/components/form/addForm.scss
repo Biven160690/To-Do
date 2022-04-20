@@ -13,8 +13,22 @@
     
     & input {
       padding-left: 12px;
-    }
 
+       &:focus {
+        outline: none;
+        border: none;
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+       &:invalid:not(:placeholder-shown) {
+        border-color: #db2525;
+       }
+
+       &:valid:not(:placeholder-shown) {
+        border-color: #31aa2d;
+       }
+    }
+ 
     &__button {
       width: 50px;
       color: #FFFFFF;

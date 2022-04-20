@@ -1,16 +1,17 @@
 import React from 'react';
 
-import { TaskCompleted } from './TaskCompleted';
+import { TaskCompleted } from '../components/tasks';
 
-import { ReturnTaskProps, Tasks } from '../types';
-import { completedTaskStyles } from '../../../helpers/styles';
+import { ReturnTaskProps, Tasks } from '../components/tasks/types';
+import { completedTaskStyles } from '../helpers/styles';
 
-import './taskCompleted.scss';
+import '../components/tasks/taskCompleted/taskCompleted.scss';
+
 import {
   getCompletedTasks,
   removeSelectedTask,
   returnSelectedTask,
-} from '../../../helpers/taskManagement';
+} from '../helpers/taskManagement';
 
 interface TaskCompletedProps {
   taskManagement: {
@@ -24,15 +25,11 @@ export function TaskCompletedContainer({ taskManagement }: TaskCompletedProps) {
 
   const completedTasks: Tasks[] = getCompletedTasks(tasks);
 
-  const deleteCompletedTask = (id: number) => () => {
-    const updatedTasks = removeSelectedTask(id, tasks);
-    setTasks(updatedTasks);
-  };
+  const deleteCompletedTask = (id: number) => () =>
+    setTasks(removeSelectedTask(id, tasks));
 
-  const returnTask: ReturnTaskProps = (callback, id) => () => {
-    callback(false);
-    const updatedTasks = returnSelectedTask(id, tasks);
-    setTasks(updatedTasks);
+  const returnTask: ReturnTaskProps = (id) => () => {
+    setTasks(returnSelectedTask(id, tasks));
   };
 
   return (

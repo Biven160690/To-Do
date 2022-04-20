@@ -1,8 +1,6 @@
 import { FaUserCircle } from 'react-icons/fa';
 import { GrFormCheckmark } from 'react-icons/gr';
 
-import './navbar.scss';
-
 export function UserProfile() {
   return (
     <div className='navbar-userProfile'>
