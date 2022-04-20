@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar } from '../blocks/navBar/NavBar';
-import { SideBar } from '../blocks/sideBar/SideBar';
+
+import { Navbar, SideBar } from '../blocks';
 interface LayoutProps {
   children: React.ReactNode;
 }

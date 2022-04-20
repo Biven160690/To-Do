@@ -1,9 +1,8 @@
 import { TaskBox } from '../TaskBox';
 import { TaskActiveActions } from './TaskActiveActions';
-import { TaskContent } from '../TaskContent';
 
-import { Tasks } from '../types';
-import { useEffect, useState } from 'react';
+import { SelectedTaskProps, Tasks } from '../types';
+import { checkCurrentId } from '../../../helpers/taskManagement';
 
 interface TaskActiveProps {
   task: Tasks;
@@ -11,13 +10,10 @@ interface TaskActiveProps {
     box: string;
     content: string;
   };
+  editID: number | null;
   completeTask: (id: number) => () => void;
   deleteTask: (id: number) => () => void;
-  getCurrencyTask: (
-    fn: React.Dispatch<React.SetStateAction<boolean>>,
-    task: Tasks
-  ) => () => void;
-  editID: number | null;
+  getSelectedTask: SelectedTaskProps;
 }
 
 export function TaskActive({
@@ -26,24 +22,19 @@ export function TaskActive({
   editID,
   deleteTask,
   completeTask,
-  getCurrencyTask,
+  getSelectedTask,
 }: TaskActiveProps) {
-  const [isEdit, setIsEdit] = useState<boolean>(true);
-
-  useEffect(() => {
-    editID !== task.id && setIsEdit(true);
-  }, [editID, task.id, isEdit]);
-
   const { box, content } = styles;
 
   return (
     <TaskBox styles={box}>
-      <TaskContent title={task.title} styles={content} />
       <TaskActiveActions
+        styleContent={content}
+        title={task.title}
         completeTask={completeTask(task.id)}
         deleteTask={deleteTask(task.id)}
-        isEdit={isEdit}
-        getCurrencyTask={getCurrencyTask(setIsEdit, task)}
+        checkCurrentId={checkCurrentId(editID, task.id)}
+        getSelectedTask={getSelectedTask(task)}
       />
     </TaskBox>
   );

@@ -1,7 +1,5 @@
 import { FaClipboardCheck } from 'react-icons/fa';
 
-import './navbar.scss';
-
 export function NavbarContent() {
   return (
     <div className='navbar-content'>

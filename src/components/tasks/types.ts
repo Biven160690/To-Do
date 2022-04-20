@@ -4,12 +4,8 @@ export type Tasks = {
   completed: boolean;
 };
 
-export type CurrencyTaskProps = (
-  callback: React.Dispatch<React.SetStateAction<boolean>>,
+export type SelectedTaskProps = (
   task: Tasks
-) => () => void;
+) => (callback: React.Dispatch<React.SetStateAction<boolean>>) => void;
 
-export type ReturnTaskProps = (
-  callback: React.Dispatch<React.SetStateAction<boolean>>,
-  id: number
-) => () => void;
+export type ReturnTaskProps = (id: number) => () => void;
