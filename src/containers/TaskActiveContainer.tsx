@@ -5,14 +5,12 @@ import { TaskActive } from '../components/tasks';
 import { SelectedTaskProps, Tasks } from '../components/tasks/types';
 import { EditTask, SetDefaultDataProps, TaskManagement } from './types';
 
-import { activeTaskStyles } from '../helpers/styles';
+import { taskStyles } from '../helpers/styles';
 import {
   completeSelectedTask,
   getActiveTasks,
   removeSelectedTask,
 } from '../helpers/taskManagement';
-
-import '../components/tasks/taskActive/taskActive.scss';
 
 interface TaskActiveProps {
   taskManagement: TaskManagement;
@@ -48,13 +46,13 @@ export function TaskActiveContainer({
 
   return (
     <React.Fragment>
-      <h3 className='task-active__total'> To do ({activeTasks.length}) </h3>
+      <h3 className='task__total'> To do ({activeTasks.length}) </h3>
       {activeTasks.map((task) => {
         return (
           <TaskActive
             key={task.id}
             task={task}
-            styles={activeTaskStyles}
+            styles={taskStyles}
             completeTask={completeTask}
             deleteTask={deleteTask}
             getSelectedTask={getSelectedTask}

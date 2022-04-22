@@ -3,9 +3,7 @@ import React from 'react';
 import { TaskCompleted } from '../components/tasks';
 
 import { ReturnTaskProps, Tasks } from '../components/tasks/types';
-import { completedTaskStyles } from '../helpers/styles';
-
-import '../components/tasks/taskCompleted/taskCompleted.scss';
+import { taskStyles } from '../helpers/styles';
 
 import {
   getCompletedTasks,
@@ -34,15 +32,13 @@ export function TaskCompletedContainer({ taskManagement }: TaskCompletedProps) {
 
   return (
     <React.Fragment>
-      <h3 className='task-completed__total'>
-        Completed ({completedTasks.length})
-      </h3>
+      <h3 className='task__total'>Completed ({completedTasks.length})</h3>
       {completedTasks.map((task) => {
         return (
           <TaskCompleted
             task={task}
             key={task.id}
-            styles={completedTaskStyles}
+            styles={taskStyles}
             deleteCompletedTask={deleteCompletedTask}
             returnTask={returnTask}
           />

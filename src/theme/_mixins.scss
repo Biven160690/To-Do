@@ -1,0 +1,39 @@
+@mixin position($position: center) {
+    display: flex;
+
+    @if $position == 'column' {
+        flex-direction: $position;
+    }
+
+    @else if $position == 'space-between' {
+        justify-content: $position;
+    }
+
+    @else if $position == 'center' {
+        align-items: $position;
+        justify-content: $position;
+    }
+    
+    @else if $position =='start' {
+        align-items: center;
+        justify-content: $position;
+    }
+    
+    @else {
+        align-items: $position;
+    }
+}
+
+@mixin fontStyle($family, $style, $weight, $size, $height) {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin iconStyle($width, $height, $color) {
+    width: $width;
+    height: $height;
+    color: $color;
+}

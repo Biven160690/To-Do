@@ -1,30 +1,33 @@
+  @use 'src/theme/global';
+
   .task-management {
     display: flex;
     margin: 88px 20px 0px 72px;
-
+    padding-right: 10px;
+    
     &__task-active {
       width: 55%;
       margin-right: 80px;
     }
 
     &__box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include global.position(center);   
       width: 50px;
       height: 24px;
-      background: #FEF6FF;  
+      background: global.$task-management-box-color;  
       border-radius: 4px; 
       margin-top: 10px;
     }
 
     &__total {
-      font-family: 'Open Sans';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 16px;
-      color: #550DC9;
+      @include global.fontStyle(
+        global.$task-management-font-family,
+        global.$task-management-font-style,
+        global.$task-management-font-weight,
+        global.$task-management-font-size,
+        global.$task-management-line-height
+      ); 
+      color: global.$task-management-total-color;
     }
 
     &__task-completed {
@@ -35,9 +38,8 @@
 
   @media (max-width: 832px) {
     .task-management {
-      display: flex; 
-      flex-direction: column;
-
+      @include global.position(column);   
+      padding-right: 20px;
       &__task-active {
         width: 100%;
       }

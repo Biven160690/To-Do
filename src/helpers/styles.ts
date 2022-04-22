@@ -1,11 +1,6 @@
-const activeTaskStyles = {
-  box: 'task-active',
-  content: 'task-active__content',
+const taskStyles = {
+  box: 'task',
+  content: 'task__content',
 };
 
-const completedTaskStyles = {
-  box: 'task-active',
-  content: 'task-completed__content',
-};
-
-export { activeTaskStyles, completedTaskStyles };
+export { taskStyles };

@@ -10,7 +10,7 @@ export function TaskCompletedInput({
   return (
     <input
       type='checkbox'
-      className='task-active__checkbox'
+      className='task__checkbox'
       checked={isCompleted}
       onChange={returnTask}
     />

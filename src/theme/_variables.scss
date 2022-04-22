@@ -1,0 +1,129 @@
+//Colors
+
+$general-white: #FFFFFF;
+$general-grey: #ECECEC;
+$general-black: rgba(0, 0, 0, 0.5);
+$general-blue: #550DC9;
+
+$sidebar-black-blue: #440BA0;
+
+$addForm-input-invalid-red: #db2525;
+$addForm-input-valid-green: #31aa2d;
+$addForm-input-border-black: rgb(0, 0, 0);
+
+$task-active-iconEdit-active:#b090ec;
+$task-active-iconDelete-red: #FF6363;
+$task-active-iconDelete-active-white-red: #ce9797;
+
+$task-managemet-total-grey: #FEF6FF;
+
+//Fonts
+
+$font-family-base: 'Open Sans';
+$font-style-base: normal;
+
+$font-family-navbar-iconText: 'Roboto';
+$font-style-navbar-iconText: $font-style-base;
+$font-weight-navbar-iconText: 700;
+$font-size-navbar-iconText: 6px;
+$line-height-navbar-iconText: 7px;
+
+$font-family-navbar-title: $font-family-base;
+$font-style-navbar-title: $font-style-base;
+$font-weight-navbar-title: 700;
+$font-size-navbar-title: 16px;
+$line-height-navbar-title: 22px;
+
+$font-family-navbar-userName: $font-family-base;
+$font-style-navbar-userName: $font-style-base;
+$font-weight-navbar-userName: 400;
+$font-size-navbar-userName: 14px;
+$sline-height-navbar-userName: 19px;
+
+$font-family-task-total: $font-family-base;
+$font-style-task-total: $font-style-base;
+$font-weight-task-total: 600;
+$font-size-task-total: 16px;
+$line-height-task-total: 22px;
+
+$font-family-task-management-total: $font-family-base;
+$font-style-task-management-total: $font-style-base;
+$font-weight-task-management-total: 400;
+$font-size-task-management-total: 12px;
+$line-height-task-management-total: 16px;
+
+//Navbar
+
+$navbar-iconText-font-family: $font-family-navbar-iconText;
+$navbar-iconText-font-style: $font-style-navbar-iconText;
+$navbar-iconText-font-weight: $font-weight-navbar-iconText;
+$navbar-iconText-font-size: $font-size-navbar-iconText;
+$navbar-iconText-line-height: $line-height-navbar-iconText;
+
+$navbar-title-font-family: $font-family-navbar-title;
+$navbar-title-font-style: $font-style-navbar-title;
+$navbar-title-font-weight: $font-weight-navbar-title;
+$navbar-title-font-size: $font-size-navbar-title;
+$navbar-title-line-height: $line-height-navbar-title;
+
+$navbar-userName-font-family: $font-family-navbar-userName;
+$navbar-userName-font-style: $font-style-navbar-userName;
+$navbar-userName-font-weight: $font-weight-navbar-userName;
+$navbar-userName-font-size: $font-size-navbar-userName;
+$navbar-userName-line-height: $sline-height-navbar-userName;
+
+$navbar-background-color: $general-white;
+$navbar-box-shadow-color: $general-black;
+$navbar-content-icon-color: $general-blue;
+
+//SideBar
+
+$sidebar-background-color: $general-blue;
+$sidebar-menu-color: $general-white;
+$sidebar-actions-color: $sidebar-black-blue;
+
+//AddForm
+
+$input-background-color: $general-white;
+
+$addForm-input-background-color: $general-white;
+$addForm-input-border-color: $general-grey;
+$addForm-input-focus-border-color: $addForm-input-border-black;
+$addForm-input-invalid-border-color: $addForm-input-invalid-red;
+$addForm-input-valid-border-color: $addForm-input-valid-green;
+
+$addForm-button-color: $general-white;
+$addForm-button-background-color: $general-blue;
+
+//Task
+
+$task-background-color: $general-white;
+$task-box-shadow-color: $general-black;
+
+$task-checkbox-color: $general-blue;
+$task-checkbox-background-color: $general-white;
+$task-checkbox-border-color: $general-grey;
+
+$task-iconEdit-color: $general-blue;
+$task-iconEdit-active-color: $task-active-iconEdit-active;
+
+$task-iconDelete-color: $task-active-iconDelete-red;
+$task-iconDelete-active-color: $task-active-iconDelete-active-white-red;
+
+$task-font-family: $font-family-task-total;
+$task-font-style: $font-style-task-total;
+$task-font-weight: $font-weight-task-total;
+$task-font-size: $font-size-task-total;
+$task-line-height: $line-height-task-total;
+
+
+//TaskManagement 
+
+$task-management-box-color: $task-managemet-total-grey;
+$task-management-total-color: $general-blue;
+
+$task-management-font-family: $font-family-task-management-total;
+$task-management-font-style: $font-style-task-management-total;
+$task-management-font-weight: $font-weight-task-management-total;
+$task-management-font-size: $font-size-task-management-total;
+$task-management-line-height: $line-height-task-management-total;
