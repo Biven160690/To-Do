@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { TaskAddForm } from '../components/form/TaskAddForm';
 
 import { EditTask, SetDefaultDataProps, TaskManagement } from './types';
-import { createTask, editSelectedTask } from '../helpers/taskManagement';
+import {
+  checkEditId,
+  createTask,
+  editSelectedTask,
+} from '../helpers/taskManagement';
 
 import '../components/form/addForm.scss';
 
@@ -24,7 +28,7 @@ export function TaskAddFormContainer({
   const { editID, selectedTask, setSelectedTask } = editTask;
 
   useEffect(() => {
-    editID ? setIsAdding(false) : setIsAdding(true);
+    setIsAdding(checkEditId(editID));
   }, [editID]);
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {

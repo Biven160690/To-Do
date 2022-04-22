@@ -8,11 +8,13 @@ type EditTaskProps = (
   selectedTask: string
 ) => Tasks[];
 
-const updateTaskList: UpdateTask = (id, tasks) => {
-  const data = [...tasks];
-  const index = data.findIndex((task) => task.id === id);
-  data[index].completed = !data[index].completed;
-  return data;
+const updateTask: UpdateTask = (id, tasks) => {
+  return tasks.map((task) => {
+    if (task.id === id) {
+      return { ...task, completed: !task.completed };
+    }
+    return task;
+  });
 };
 
 const getActiveTasks: GetTasks = (data) =>
@@ -26,10 +28,13 @@ const removeSelectedTask: UpdateTask = (id, tasks) => {
   return data.filter((task) => task.id !== id);
 };
 
-const completeSelectedTask: UpdateTask = (id, tasks) =>
-  updateTaskList(id, tasks);
+const completeSelectedTask: UpdateTask = (id, tasks) => updateTask(id, tasks);
 
-const returnSelectedTask: UpdateTask = (id, tasks) => updateTaskList(id, tasks);
+const returnSelectedTask = (id: number, tasks: Tasks[]) => {
+  const data = [...tasks];
+  const returningTask = data.filter((task) => task.id === id);
+  return [...removeSelectedTask(id, tasks), ...updateTask(id, returningTask)];
+};
 
 const editSelectedTask: EditTaskProps = (tasks, editID, selectedTask) => {
   return tasks.map((task) => {
@@ -44,8 +49,11 @@ const createTask = (selectedTask: string) => {
   return { id: Date.now(), completed: false, title: selectedTask };
 };
 
-const checkCurrentId = (editId: number | null, currentId: number) => () =>
-  editId !== currentId;
+const checkCurrentId =
+  (editId: number | null, currentId: number) => (): boolean =>
+    editId !== currentId;
+
+const checkEditId = (editId: number | null): boolean => !editId;
 
 export {
   getActiveTasks,
@@ -56,4 +64,5 @@ export {
   editSelectedTask,
   createTask,
   checkCurrentId,
+  checkEditId,
 };

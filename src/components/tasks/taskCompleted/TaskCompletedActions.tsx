@@ -1,7 +1,6 @@
 import { TaskCompletedButton } from './TaskCompletedButton';
 import { TaskCompletedInput } from './TaskCompletedInput';
 
-import './taskCompleted.scss';
 import { TaskContent } from '../TaskContent';
 interface TaskCompletedProps {
   isCompleted: boolean;
@@ -19,15 +18,15 @@ export function TaskCompletedActions({
   returnTask,
 }: TaskCompletedProps) {
   return (
-    <div className='task-completed__actions'>
-      <div className='task-completed__actions__inputBox'>
+    <div className='task__actions'>
+      <div className='task__actions__inputBox'>
         <div>
           <TaskCompletedInput
             isCompleted={isCompleted}
             returnTask={returnTask}
           />
         </div>
-        <div className='task-active__actions__contentBox'>
+        <div className='task__actions__contentBox'>
           <TaskContent
             title={title}
             styles={styleContent}

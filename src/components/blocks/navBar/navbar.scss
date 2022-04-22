@@ -1,3 +1,5 @@
+@use 'src/theme/global';
+
 .navbar {
   position: fixed;
   z-index: 1;
@@ -5,37 +7,33 @@
   height: 64px;
   right: 0px;
   top: 0px;
-  background-color: #FFFFFF;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: space-between;
+  background-color: global.$navbar-background-color;
+  box-shadow: 0 0 10px global.$navbar-box-shadow-color;
+  @include global.position(space-between); 
 }
 
 .navbar-content {
-  display: flex;
-  align-items: center;
+  @include global.position(); 
   height: 100%;
 
    &__logo {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     width: 52px;
+    @include global.position(center); 
+    flex-direction: column;
+    width: 52px;
    }
 
    &__icon {
-     width: 18.13px;
-     height: 23.52px;
-     color: #550DC9;
+    @include global.iconStyle(18.13px, 23.52px, global.$navbar-content-icon-color); 
    }
 
    &__iconText {
-     font-family: 'Roboto';
-     font-style: normal;
-     font-weight: 700;
-     font-size: 6px;
-     line-height: 7px;
+    @include global.fontStyle(
+      global.$navbar-iconText-font-family,
+      global.$navbar-iconText-font-style,
+      global.$navbar-iconText-font-weight,
+      global.$navbar-iconText-font-size,
+      global.$navbar-iconText-line-height
+    ); 
    }
 
    &__title {
@@ -44,24 +42,27 @@
    }
 
    &__text {
-     font-family: 'Open Sans';
-     font-style: normal;
-     font-weight: 700;
-     font-size: 16px;
-     line-height: 22px;
+    @include global.fontStyle(
+      global.$navbar-title-font-family,
+      global.$navbar-title-font-style,
+      global.$navbar-title-font-weight,
+      global.$navbar-title-font-size,
+      global.$navbar-title-line-height
+    ); 
    }
 }
 
 .navbar-userProfile {
-  display: flex;
-  align-items: center;
+  @include global.position(); 
 
    &__userName {
-     font-family: 'Open Sans';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 14px;
-     line-height: 19px;
+    @include global.fontStyle(
+      global.$navbar-userName-font-family,
+      global.$navbar-userName-font-style,
+      global.$navbar-userName-font-weight,
+      global.$navbar-userName-font-size,
+      global.$navbar-userName-line-height
+    ); 
 
      &:first-child {
        padding-right: 8px;
@@ -69,9 +70,8 @@
    }
 
    &__userActions {
-     display: flex;
-     align-items: center;
-     margin-right: 30px;
+    @include global.position(); 
+    margin-right: 30px;
    }
 
    &__userIcon {

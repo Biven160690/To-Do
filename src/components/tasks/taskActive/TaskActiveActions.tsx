@@ -21,12 +21,12 @@ export function TaskActiveActions({
   title,
 }: TaskActiveProps) {
   return (
-    <div className='task-active__actions'>
-      <div className='task-active__actions__inputBox'>
+    <div className='task__actions'>
+      <div className='task__actions__inputBox'>
         <div>
           <TaskActiveInput completeTask={completeTask} />
         </div>
-        <div className='task-active__actions__contentBox'>
+        <div className='task__actions__contentBox'>
           <TaskContent title={title} styles={styleContent} />
         </div>
       </div>

@@ -7,6 +7,8 @@ import { Tasks } from '../components/tasks/types';
 
 import { data } from '../data';
 
+import '../components/tasks/task.scss';
+
 import './taskManagement.scss';
 
 export function TaskManagement() {
