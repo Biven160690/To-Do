@@ -24,11 +24,14 @@ export function TaskActiveButtons({
   return (
     <div className='task__buttons'>
       {isEditing && (
-        <button type='button' onClick={() => getSelectedTask(setIsEditing)}>
+        <button
+          data-testid='edit'
+          type='button'
+          onClick={() => getSelectedTask(setIsEditing)}>
           <FiEdit className='task__iconEdit' />
         </button>
       )}
-      <button type='button' onClick={deleteTask}>
+      <button data-testid='delete' type='button' onClick={deleteTask}>
         <RiDeleteBin6Line className='task__iconDelete' />
       </button>
     </div>
