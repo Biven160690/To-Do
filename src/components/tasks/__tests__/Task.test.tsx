@@ -12,7 +12,7 @@ describe('TaskAddForm component', () => {
   const editID = 1;
   const deleteTask = jest.fn();
   const completeTask = jest.fn();
-  const getSelectedTask = jest.fn(() => jest.fn());
+  const getSelectedTask = jest.fn();
 
   it('render TaskActive component', () => {
     render(
