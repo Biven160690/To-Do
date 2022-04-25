@@ -31,7 +31,7 @@ export function TaskCompletedContainer({ taskManagement }: TaskCompletedProps) {
   };
 
   return (
-    <React.Fragment>
+    <section>
       <h3 className='task__total'>Completed ({completedTasks.length})</h3>
       {completedTasks.map((task) => {
         return (
@@ -44,6 +44,6 @@ export function TaskCompletedContainer({ taskManagement }: TaskCompletedProps) {
           />
         );
       })}
-    </React.Fragment>
+    </section>
   );
 }

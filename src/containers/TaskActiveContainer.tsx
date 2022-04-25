@@ -45,7 +45,7 @@ export function TaskActiveContainer({
   };
 
   return (
-    <React.Fragment>
+    <section>
       <h3 className='task__total'> To do ({activeTasks.length}) </h3>
       {activeTasks.map((task) => {
         return (
@@ -60,6 +60,6 @@ export function TaskActiveContainer({
           />
         );
       })}
-    </React.Fragment>
+    </section>
   );
 }

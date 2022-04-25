@@ -21,7 +21,7 @@ export function TaskActiveActions({
   title,
 }: TaskActiveProps) {
   return (
-    <div className='task__actions'>
+    <article className='task__actions'>
       <div className='task__actions__inputBox'>
         <div>
           <TaskActiveInput completeTask={completeTask} />
@@ -37,6 +37,6 @@ export function TaskActiveActions({
           getSelectedTask={getSelectedTask}
         />
       </div>
-    </div>
+    </article>
   );
 }

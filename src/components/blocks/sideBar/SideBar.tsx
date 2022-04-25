@@ -4,8 +4,8 @@ import './sidebar.scss';
 
 export function SideBar() {
   return (
-    <div className='sidebar'>
+    <aside className='sidebar'>
       <SideBarActions />
-    </div>
+    </aside>
   );
 }
