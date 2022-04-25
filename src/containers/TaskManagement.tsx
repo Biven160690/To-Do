@@ -20,11 +20,11 @@ export function TaskManagement() {
   };
 
   return (
-    <div className='task-management'>
+    <main className='task-management'>
       <ActiveTasksManagement taskManagement={taskManagement} />
       <div className='task-management__task-completed'>
         <TaskCompletedContainer taskManagement={taskManagement} />
       </div>
-    </div>
+    </main>
   );
 }

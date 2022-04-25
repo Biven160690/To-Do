@@ -5,9 +5,9 @@ import './navbar.scss';
 
 export function Navbar() {
   return (
-    <div className='navbar'>
+    <header className='navbar'>
       <NavbarContent />
       <UserProfile />
-    </div>
+    </header>
   );
 }

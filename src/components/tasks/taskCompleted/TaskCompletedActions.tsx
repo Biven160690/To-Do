@@ -18,7 +18,7 @@ export function TaskCompletedActions({
   returnTask,
 }: TaskCompletedProps) {
   return (
-    <div className='task__actions'>
+    <article className='task__actions'>
       <div className='task__actions__inputBox'>
         <div>
           <TaskCompletedInput
@@ -37,6 +37,6 @@ export function TaskCompletedActions({
       <div>
         <TaskCompletedButton deleteCompletedTask={deleteCompletedTask} />
       </div>
-    </div>
+    </article>
   );
 }
